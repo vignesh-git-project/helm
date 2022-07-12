@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: vcphelm 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vcphelm
+  template:
+    metadata:
+      labels:
+        app: vcphelm 
+    spec:
+      containers:
+        - name: vcphelm 
+          image: cpvignesh.azurecr.io/vcphelm
+          ports:
+          - containerPort: 80
